@@ -26,8 +26,8 @@
         </v-col>
       <!-- <v-col><input class="inputAdd " :id="`new${status.id}` " v-model="newTodo.title" placeholder="+"></v-col> -->
       <v-col cols="2">
-        <v-btn fab @click="addTodo" class="ma-2 float-right" :color="`${status.color} lighten-1`" dark>
-        <v-icon dark> mdi-checkbox-marked-circle </v-icon>
+        <v-btn large @click="addTodo" class="ma-2 float-right" :color="`${status.color} lighten-1`" dark>
+        <v-icon dark> mdi-shape-rectangle-plus </v-icon>
       </v-btn>
       </v-col>
     </v-row>
@@ -79,8 +79,6 @@ export default Vue.extend({
       todos.forEach((todo,order) => {
         editTodo({...todo,order,status:this.status})
       });
-
-      
     }
   },
 
