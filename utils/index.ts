@@ -23,7 +23,7 @@ export const getStatuses:Status[] | any =  () => {
     const newStatuses:Status[] = [{
       id:v4(),
       name:"Not Started",
-      color:"pink lighten-4"
+      color:"pink"
     }]
     localStorage.setItem("statuses", JSON.stringify(newStatuses))
     statusesString = localStorage.getItem("statuses")

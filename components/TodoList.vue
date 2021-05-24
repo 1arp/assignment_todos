@@ -71,12 +71,15 @@ export default Vue.extend({
   methods:{
     addTodo(){
       pushTodo({...this.newTodo, order:this.todoCount, status:this.status})
-      // this.rerender += 1;
+      this.newTodo={}
+      const todos = getTodos()
+      this.todos = todos.filter(todo => todo.status?.id === this.status.id).sort((a,b) => a.order - b.order)
     },
     saveAll(e,todos){
       todos.forEach((todo,order) => {
         editTodo({...todo,order,status:this.status})
       });
+
       
     }
   },
